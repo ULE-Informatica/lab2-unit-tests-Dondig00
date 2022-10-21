@@ -5,6 +5,12 @@
 
 unsigned int wrapFunctionAdd(unsigned int ui_a, unsigned int ui_b) {
   unsigned int usum = ui_a + ui_b;
+  if (UINT_MAX - ui_a < ui_b) {
+    /* Handle error */
+    throw -1;
+  } else {
+    usum = ui_a + ui_b;
+  }
   return usum;
 }
 
